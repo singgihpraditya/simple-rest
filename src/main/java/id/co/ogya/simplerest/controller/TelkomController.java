@@ -10,16 +10,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import id.co.ogya.simplerest.request.BayarTelkomRequest;
-import id.co.ogya.simplerest.response.BayarTelkomResponse;
-import id.co.ogya.simplerest.response.SimpleResponse;
+import id.co.ogya.simplerest.request.RecordBayarTelkomRequest;
+import id.co.ogya.simplerest.response.RecordBayarTelkomResponse;
 import id.co.ogya.simplerest.response.ValidateNoTelponResponse;
 
 @Controller
 public class TelkomController {
 	@PostMapping("/telkom/bayar")
-	public ResponseEntity<Object> bayar(@RequestBody BayarTelkomRequest request) {
-		BayarTelkomResponse bayarTelkomResponse = new BayarTelkomResponse();
+	public ResponseEntity<Object> bayar(@RequestBody RecordBayarTelkomRequest request) {
+		RecordBayarTelkomResponse bayarTelkomResponse = new RecordBayarTelkomResponse();
 		bayarTelkomResponse.setBulan(request.getBulan());
 		bayarTelkomResponse.setNoRekening(request.getNoRekening());
 		bayarTelkomResponse.setNoTelepon(request.getNoTelepon());
