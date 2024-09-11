@@ -18,6 +18,7 @@ public class SimpleRestController {
 	@GetMapping("/simple/get")
 	public ResponseEntity<Object> simpleGetMethodWithQueryParam(@RequestParam(name = "input") String input) {
 		SimpleResponse simpleResponse = new SimpleResponse();
+int i = 0;
 		simpleResponse.setInput(input);
 		simpleResponse.setValid(true);
 		return new ResponseEntity(simpleResponse, HttpStatus.OK);
